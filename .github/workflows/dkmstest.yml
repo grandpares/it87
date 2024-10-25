@@ -1,10 +1,6 @@
 name: DKMS CI
 
 on:
-  //push:
-    //branches: [ "master", "akmods" ]
-  //pull_request:
-    //branches: [ "master", "akmods" ]
   workflow_dispatch:
 
 jobs:
