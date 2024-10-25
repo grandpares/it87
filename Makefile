@@ -27,7 +27,7 @@ else
 SYSTEM_MAP = /proc/kallsyms
 endif
 
-DRIVER := it87
+DRIVER := it87-extras
 ifneq ("","$(wildcard .git/*)")
 DRIVER_VERSION := $(shell git describe --long).$(shell date -u -d "$$(git show -s --format=%ci HEAD)" +%Y%m%d)
 else
@@ -49,6 +49,7 @@ MODDESTDIR=$(KERNEL_MODULES)/kernel/$(MOD_SUBDIR)
 
 obj-m = $(patsubst %,%.o,$(DRIVER))
 obj-ko  := $(patsubst %,%.ko,$(DRIVER))
+$(patsubst %,%-objs,$(DRIVER)) := it87.o
 
 MAKEFLAGS += --no-print-directory
 
