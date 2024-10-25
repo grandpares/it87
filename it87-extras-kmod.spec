@@ -51,13 +51,7 @@ for kernel_version in %{?kernel_versions}; do
  install -D -m 755 _kmod_build_${kernel_version%%___*}/%{modname}.ko %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/
  chmod a+x %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/%{modname}.ko
 done
-
-# Blacklist:
-for kernel_version in %{?kernel_versions}; do
-mkdir -p %{buildroot}%{_prefix}/lib/modprobe.d/
-install -p -m 0644 _kmod_build_${kernel_version%%___*}/install/modprobe.conf %{buildroot}%{_prefix}/lib/modprobe.d/it87-extras.conf
-done
-
 %{?akmod_install}
+
 
 %changelog
