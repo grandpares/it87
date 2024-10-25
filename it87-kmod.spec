@@ -1,7 +1,8 @@
 %global modname it87-extras
-%global srcversion master
+%global srcversion copr-staging
 %global srcname it87
 %global pkgname it87-extras
+%global maintainer grandpares
 
 %if 0%{?fedora}
 %global buildforkernels akmod
@@ -14,8 +15,8 @@ Version:       %{srcversion}.git
 Release:       2%{?dist}
 Summary:       Linux Driver for ITE LPC chips
 License:       GPLv2
-URL:           https://github.com/frankcrawford/it87
-Source0:       %{url}/archive/refs/heads/master.zip
+URL:           https://github.com/%{maintainer}/it87
+Source0:       %{url}/archive/refs/heads/%{srcversion}.zip
 
 BuildRequires: kmodtool
 

@@ -2,15 +2,17 @@
 %global debug_package %{nil}
 %endif
 
+%global srcname it87
+
 Name:     it87-extras
 Version:  {{{ git_dir_version }}}
 Release:  1%{?dist}
 Summary:  Linux Driver for ITE LPC chips
 License:  GPLv2
-URL:      https://github.com/frankcrawford/it87
+URL:      https://github.com/grandpares/it87
 
 
-Source:   %{url}/archive/refs/heads/master.tar.gz
+Source:   %{url}/archive/refs/heads/copr-staging.tar.gz
 Source1:  ./modprobe.conf
 
 Provides: %{name}-kmod-common = %{version}
@@ -22,11 +24,11 @@ BuildRequires: systemd-rpm-macros
 Linux Driver for ITE LPC chips
 
 %prep
-%setup -q -c %{name}-master
+%setup -q -c %{srcname}-master
 
 %files
-%doc %{name}-master/README.md
-%license %{name}-master/LICENSE
+%doc %{srcname}-master/README
+%license %{srcname}-master/LICENSE
 
 %changelog
 {{{ git_dir_changelog }}}
