@@ -53,7 +53,7 @@ for kernel_version in %{?kernel_versions}; do
 done
 
 # Blacklist:
-install -p -m 0644 install/modprobe.conf %{buildroot}%{_prefix}/lib/modprobe.d/it87-extras.conf
+install -p -m 0644 _kmod_build_${kernel_version%%___*}/install/modprobe.conf %{buildroot}%{_prefix}/lib/modprobe.d/it87-extras.conf
 
 %{?akmod_install}
 
