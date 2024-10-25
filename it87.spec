@@ -13,7 +13,6 @@ URL:      https://github.com/grandpares/it87
 
 
 Source:   %{url}/archive/refs/heads/copr-staging.tar.gz
-Source1:  ./modprobe.conf
 
 Provides: %{name}-kmod-common = %{version}
 Requires: %{name}-kmod >= %{version}
