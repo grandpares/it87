@@ -2,7 +2,7 @@
 %global debug_package %{nil}
 %endif
 
-Name:     it87-crawford
+Name:     it87-extras
 Version:  {{{ git_dir_version }}}
 Release:  1%{?dist}
 Summary:  Linux Driver for ITE LPC chips
@@ -11,7 +11,7 @@ URL:      https://github.com/frankcrawford/it87
 
 
 Source:   %{url}/archive/refs/heads/master.tar.gz
-Source1:  ./it87.conf
+Source1:  ./modprobe.conf
 
 Provides: %{name}-kmod-common = %{version}
 Requires: %{name}-kmod >= %{version}

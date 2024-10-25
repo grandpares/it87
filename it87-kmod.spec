@@ -1,7 +1,7 @@
 %global modname it87-extras
 %global srcversion master
 %global srcname it87
-%global pkgname it87
+%global pkgname it87-extras
 
 %if 0%{?fedora}
 %global buildforkernels akmod
