@@ -1,5 +1,5 @@
 %global modname it87-extras
-%global srcversion copr-staging
+%global srcversion akmods
 %global srcname it87
 %global pkgname it87-extras
 %global maintainer grandpares

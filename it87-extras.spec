@@ -3,7 +3,7 @@
 %endif
 
 %global srcname it87
-%global srcversion copr-staging
+%global srcversion akmods
 
 Name:     it87-extras
 Version:  {{{ git_dir_version }}}
