@@ -60,4 +60,7 @@ done
 
 %{?akmod_install}
 
+%files
+%attr(0644,root,root) %{_prefix}/lib/modprobe.d/it87-extras.conf
+
 %changelog
