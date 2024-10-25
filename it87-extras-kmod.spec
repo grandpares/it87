@@ -1,7 +1,8 @@
 %global modname it87-extras
-%global srcversion master
+%global srcversion copr-staging
 %global srcname it87
 %global pkgname it87-extras
+%global maintainer grandpares
 
 %if 0%{?fedora}
 %global buildforkernels akmod
@@ -10,12 +11,12 @@
 
 # name should have a -kmod suffix
 Name:          %{pkgname}-kmod
-Version:       %{srcversion}.git
+Version:       {{{ git_dir_version }}}
 Release:       2%{?dist}
 Summary:       Linux Driver for ITE LPC chips
 License:       GPLv2
-URL:           https://github.com/frankcrawford/it87
-Source0:       %{url}/archive/refs/heads/master.zip
+URL:           https://github.com/%{maintainer}/it87
+Source0:       %{url}/archive/refs/heads/%{srcversion}.zip
 
 BuildRequires: kmodtool
 
@@ -50,10 +51,7 @@ for kernel_version in %{?kernel_versions}; do
  install -D -m 755 _kmod_build_${kernel_version%%___*}/%{modname}.ko %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/
  chmod a+x %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/%{modname}.ko
 done
-
-# Blacklist:
-install -p -m 0644 install/modprobe.conf %{buildroot}%{_prefix}/lib/modprobe.d/it87-extras.conf
-
 %{?akmod_install}
+
 
 %changelog
