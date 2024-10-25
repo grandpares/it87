@@ -2,9 +2,9 @@ name: Makefile CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "akmods" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "akmods" ]
   workflow_dispatch:
 
 jobs:
