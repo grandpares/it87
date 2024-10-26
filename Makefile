@@ -6,6 +6,7 @@ endif
 #TARGET = 2.6.33.5
 
 KERNEL_MODULES = /lib/modules/$(TARGET)
+MODPROBED = /usr/lib/modprobe.d
 
 ifneq ("","$(wildcard /usr/src/linux-headers-$(TARGET)/*)")
 # Ubuntu
@@ -88,6 +89,7 @@ ifeq ($(COMPRESS_XZ), y)
 	@xz -f $(MODDESTDIR)/$(DRIVER).ko
 endif
 	depmod -a -F $(SYSTEM_MAP) $(TARGET)
+	@cp ./install/modprobe.conf $(MODPROBED)/it87-extras.conf
 
 dkms:
 	@mkdir -p $(DKMS_ROOT_PATH)
@@ -100,6 +102,7 @@ dkms:
 	@dkms add -m $(DRIVER) -v $(DRIVER_VERSION)
 	@dkms build -m $(DRIVER) -v $(DRIVER_VERSION) -k $(TARGET)
 	@dkms install --force -m $(DRIVER) -v $(DRIVER_VERSION) -k $(TARGET)
+	@cp ./install/modprobe.conf $(MODPROBED)/it87-extras.conf
 	@modprobe $(DRIVER)
 
 dkms_clean:
@@ -108,3 +111,4 @@ dkms_clean:
 	fi
 	@dkms remove -m $(DRIVER) -v $(DRIVER_VERSION) --all
 	@rm -rf $(DKMS_ROOT_PATH)
+	@rm -f $(MODPROBED)/it87-extras.conf
