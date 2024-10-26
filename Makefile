@@ -103,6 +103,7 @@ dkms:
 	@dkms build -m $(DRIVER) -v $(DRIVER_VERSION) -k $(TARGET)
 	@dkms install --force -m $(DRIVER) -v $(DRIVER_VERSION) -k $(TARGET)
 	@cp ./install/modprobe.conf $(MODPROBED)/it87-extras.conf
+	@modprobe -r it87
 	@modprobe $(DRIVER)
 
 dkms_clean:
