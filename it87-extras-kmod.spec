@@ -1,8 +1,8 @@
 %global modname it87-extras
-%global srcversion akmods
+%global srcversion master
 %global srcname it87
 %global pkgname it87-extras
-%global maintainer grandpares
+%global maintainer frankcrawford
 
 %if 0%{?fedora}
 %global buildforkernels akmod

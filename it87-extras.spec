@@ -3,14 +3,14 @@
 %endif
 
 %global srcname it87
-%global srcversion akmods
+%global srcversion master
 
 Name:     it87-extras
 Version:  {{{ git_dir_version }}}
 Release:  1%{?dist}
 Summary:  Linux Driver for ITE LPC chips
 License:  GPLv2
-URL:      https://github.com/grandpares/it87
+URL:      https://github.com/frankcrawford/it87
 
 
 Source:   %{url}/archive/refs/heads/%{srcversion}.tar.gz
