@@ -40,8 +40,8 @@ done
 %build
 for kernel_version  in %{?kernel_versions} ; do
   pushd _kmod_build_${kernel_version%%___*}/
-  make clean
-  make KVER=${kernel_version%%___*}
+  make TARGET=${kernel_version%%___*} clean
+  make TARGET=${kernel_version%%___*}
   popd
 done
 
