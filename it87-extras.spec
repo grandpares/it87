@@ -6,7 +6,7 @@
 %global srcversion akmods
 
 Name:     it87-extras
-Version:  {{{ git_dir_version }}}
+Version:  0.1
 Release:  1%{?dist}
 Summary:  Linux Driver for ITE LPC chips
 License:  GPLv2
