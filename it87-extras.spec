@@ -7,7 +7,7 @@
 
 Name:     it87-extras
 Version:  {{{ git_dir_version }}}
-Release:  %{dist}
+Release:  %{?dist}
 Summary:  Linux Driver for ITE LPC chips
 License:  GPLv2
 URL:      https://github.com/grandpares/it87
