@@ -12,7 +12,7 @@
 # name should have a -kmod suffix
 Name:          %{pkgname}-kmod
 Version:       {{{ git_dir_version }}}
-Release:       1%{?dist}
+Release:       %{?dist}
 Summary:       Linux Driver for ITE LPC chips
 License:       GPLv2
 URL:           https://github.com/%{maintainer}/it87
