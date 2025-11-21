@@ -1,6 +1,7 @@
 %global srcname it87
 %global pkgname it87-extras
 %global maintainer grandpares
+%global akmod_build 1
 %global debug_package %{nil}
 %undefine _debugsource_packages
 
