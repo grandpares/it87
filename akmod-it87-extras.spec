@@ -1,6 +1,8 @@
 %global srcname it87
 %global pkgname it87-extras
 %global maintainer grandpares
+%global debug_package %{nil}
+%undefine _debugsource_packages
 
 Name:           akmod-%{pkgname}
 Version:       {{{ git_dir_version }}}
@@ -34,3 +36,5 @@ cp -a %{srcname}-akmods/* %{buildroot}/usr/src/akmods/%{pkgname}-%{version}/
 /usr/src/akmods/%{pkgname}-%{version}/
 %doc
 %license
+
+%changelog
